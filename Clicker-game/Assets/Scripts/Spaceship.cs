@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spaceship : MonoBehaviour
 {
-    public void Click()
+    private int touchCount = 0;
+    [SerializeField] private Text touchCountText;
+    private void OnMouseDown()
     {
-        Debug.Log("Click");
+        touchCount++;
+        touchCountText.text = touchCount.ToString(); 
+        Debug.Log("Clicked");
     }
 }
